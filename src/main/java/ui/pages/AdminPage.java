@@ -11,11 +11,17 @@ public class AdminPage {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "//div[@class='head']")
+    @FindBy(tagName = "h1")
     private WebElement adminPageHeader;
 
+    @FindBy()
+    private WebElement addButton;
 
     public String getAdminHeaderText(){
         return adminPageHeader.getText().trim();
+    }
+
+    public void clickAddButton(){
+        addButton.click();
     }
 }

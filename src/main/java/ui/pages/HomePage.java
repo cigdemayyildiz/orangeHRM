@@ -11,7 +11,7 @@ public class HomePage {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(tagName = "h1")
+    @FindBy(xpath = "//div[@class='head']")
     private WebElement dashboard;
 
     @FindBy(id = "menu_admin_viewAdminModule")
