@@ -3,10 +3,14 @@ package ui.step_definitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+
 import org.junit.Assert;
+
 import org.openqa.selenium.WebDriver;
+
 import ui.pages.HomePage;
 import ui.pages.LoginPage;
+
 import ui.utils.ConfigReader;
 import ui.utils.DriverUtils;
 
