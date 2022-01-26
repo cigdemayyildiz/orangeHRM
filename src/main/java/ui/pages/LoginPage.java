@@ -23,9 +23,6 @@ public class LoginPage {
     @FindBy(id = "spanMessage")
     private WebElement errorMessage;
 
-    @FindBy(id = "spanMessage")
-    private WebElement errorMessage;
-
     public void login(String username, String password){
         this.username.sendKeys(username);
         this.password.sendKeys(password);
