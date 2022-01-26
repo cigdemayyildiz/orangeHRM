@@ -14,6 +14,7 @@ public class LoginPageStepDefs {
 
     WebDriver driver = DriverUtils.getDriver();
     LoginPage loginPage;
+
     HomePage homePage;
 
     @Given("I am on OrangeHrm login page")
@@ -22,7 +23,7 @@ public class LoginPageStepDefs {
     }
     @When("I fill up all info for login")
     public void i_fill_up_all_info_for_login() {
-        loginPage = new LoginPage(driver);
+        loginPage = new ui.pages.LoginPage(driver);
         loginPage.login(ConfigReader.readProperty("username"), ConfigReader.readProperty("password"));
     }
     @Then("I see dashboard page")
@@ -40,6 +41,4 @@ public class LoginPageStepDefs {
         loginPage = new LoginPage(driver);
         Assert.assertEquals("Invalid credentials", loginPage.getErrorText());
     }
-
-
 }

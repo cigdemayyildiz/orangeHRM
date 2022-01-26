@@ -12,13 +12,16 @@ public class LoginPage {
     }
 
     @FindBy(id="txtUsername")
-    public WebElement username;
+    private WebElement username;
 
     @FindBy(id="txtPassword")
-    public WebElement password;
+    private WebElement password;
 
     @FindBy(id="btnLogin")
-    public WebElement loginButton;
+    private WebElement loginButton;
+
+    @FindBy(id = "spanMessage")
+    private WebElement errorMessage;
 
     @FindBy(id = "spanMessage")
     private WebElement errorMessage;
