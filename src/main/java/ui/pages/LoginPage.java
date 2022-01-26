@@ -20,9 +20,16 @@ public class LoginPage {
     @FindBy(id="btnLogin")
     public WebElement loginButton;
 
+    @FindBy(id = "spanMessage")
+    private WebElement errorMessage;
+
     public void login(String username, String password){
         this.username.sendKeys(username);
         this.password.sendKeys(password);
         loginButton.click();
+    }
+
+    public String getErrorText(){
+        return errorMessage.getText().trim();
     }
 }

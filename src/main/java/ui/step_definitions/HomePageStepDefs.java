@@ -1,5 +1,6 @@
 package ui.step_definitions;
 
+import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -21,11 +22,12 @@ public class HomePageStepDefs {
     HomePage homePage;
     AdminPage adminPage;
 
+
     @Given("I am on OrangeHrm home page")
     public void i_am_on_orange_hrm_home_page() {
         driver.get(ConfigReader.readProperty("url"));
         loginPage = new LoginPage(driver);
-        loginPage.login("Admin", "admin123");
+        loginPage.login(ConfigReader.readProperty("username"),ConfigReader.readProperty("password"));
     }
 
     @When("I click the Admin button")
