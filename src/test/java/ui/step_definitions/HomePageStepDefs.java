@@ -24,26 +24,33 @@ public class HomePageStepDefs {
     AdminPage adminPage;
 
 
-    @Given("I am on OrangeHrm home page")
-    public void i_am_on_orange_hrm_home_page() {
+    @Given("OrangeHrm home page")
+    public void orange_hrm_home_page() {
         driver.get(ConfigReader.readProperty("url"));
         loginPage = new LoginPage(driver);
         loginPage.login(ConfigReader.readProperty("username"),ConfigReader.readProperty("password"));
     }
-    @When("I click the Admin button")
-    public void i_click_the_admin_button() {
+
+    @When("click the Admin button")
+    public void click_the_admin_button() {
         homePage = new HomePage(driver);
         homePage.clickAdminButton();
     }
-    @When("I should see System Users header")
-    public void i_should_see_system_users_header() {
-        adminPage = new AdminPage(driver);
-        Assert.assertEquals("System Users", adminPage.getAdminHeaderText());
-    }
-    @Then("I can add a new user")
-    public void i_can_add_a_new_user() {
 
+    @When("click the Add button")
+    public void click_the_add_button() {
+        adminPage = new AdminPage(driver);
+        adminPage.clickAddButton();
     }
+
+    @Then("verify add page header")
+    public void verify_add_page_header() {
+        adminPage = new AdminPage(driver);
+        Assert.assertEquals("Add User", adminPage.getAdminHeaderText());
+    }
+
+
+
 
 
 }

@@ -14,7 +14,7 @@ public class AdminPage {
     @FindBy(tagName = "h1")
     private WebElement adminPageHeader;
 
-    @FindBy()
+    @FindBy(id = "btnAdd")
     private WebElement addButton;
 
     public String getAdminHeaderText(){
