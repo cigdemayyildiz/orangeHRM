@@ -12,17 +12,25 @@ public class LoginPage {
     }
 
     @FindBy(id="txtUsername")
-    public WebElement username;
+    private WebElement username;
 
     @FindBy(id="txtPassword")
-    public WebElement password;
+    private WebElement password;
 
     @FindBy(id="btnLogin")
-    public WebElement loginButton;
+    private WebElement loginButton;
+
+    @FindBy(id = "spanMessage")
+    private WebElement errorMessage;
 
     public void login(String username, String password){
         this.username.sendKeys(username);
         this.password.sendKeys(password);
         loginButton.click();
     }
+
+    public String getErrorText(){
+        return errorMessage.getText().trim();
+    }
+
 }
