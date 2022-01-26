@@ -41,5 +41,4 @@ public class DriverUtils {
         driver.quit();
         driver = null;
     }
-
 }

@@ -29,7 +29,20 @@ public class LoginPage {
     public void i_see_dashboard_page() {
         homePage = new HomePage(driver);
         Assert.assertEquals("Dashboard", homePage.getDashboardText());
+    }
 
+    @When("I fill up all info with invalid credentials")
+    public void i_fill_up_all_info_with_invalid_credentials() {
+        loginPage = new ui.pages.LoginPage(driver);
+        loginPage.login(ConfigReader.readProperty("invusername"),ConfigReader.readProperty("invpassword"));
+    }
+
+    @Then("I see error message")
+    public void i_see_error_message() {
+        loginPage = new ui.pages.LoginPage(driver);
+        String actualErrorMessage = loginPage.getErrorText();
+        String expectedErrorMessage = "Invalid credentials";
+        Assert.assertEquals(expectedErrorMessage, actualErrorMessage);
 
     }
 }
