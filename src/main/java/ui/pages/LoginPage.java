@@ -23,6 +23,9 @@ public class LoginPage {
     @FindBy(id = "spanMessage")
     private WebElement errorMessage;
 
+    @FindBy(id = "spanMessage")
+    private WebElement errorMessage;
+
     public void login(String username, String password){
         this.username.sendKeys(username);
         this.password.sendKeys(password);
@@ -32,5 +35,4 @@ public class LoginPage {
     public String getErrorText(){
         return errorMessage.getText().trim();
     }
-
 }

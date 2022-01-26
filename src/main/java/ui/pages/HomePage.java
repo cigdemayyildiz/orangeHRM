@@ -11,10 +11,17 @@ public class HomePage {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "//h1[.='Dashboard']")
-    public WebElement dashboard;
+    @FindBy(tagName = "h1")
+    private WebElement dashboard;
+
+    @FindBy(id = "menu_admin_viewAdminModule")
+    private WebElement adminButton;
 
     public String getDashboardText(){
-        return dashboard.getText();
+        return dashboard.getText().trim();
+    }
+
+    public void clickAdminButton(){
+        adminButton.click();
     }
 }
