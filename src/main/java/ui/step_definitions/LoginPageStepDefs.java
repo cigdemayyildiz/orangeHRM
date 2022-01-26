@@ -43,6 +43,5 @@ public class LoginPage {
         String actualErrorMessage = loginPage.getErrorText();
         String expectedErrorMessage = "Invalid credentials";
         Assert.assertEquals(expectedErrorMessage, actualErrorMessage);
-
     }
 }
