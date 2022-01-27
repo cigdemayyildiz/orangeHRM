@@ -10,6 +10,5 @@ import org.junit.runner.RunWith;
         glue = "ui/step_definitions",
         plugin = {"json:target/uiReport.json","rerun:target/uiRerun.txt"}
 )
-
 public class Runner {
 }
